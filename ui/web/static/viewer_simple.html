@@ -1,0 +1,40 @@
+<html>
+<head>
+	<link rel="stylesheet" href="../css/style.css"/>
+
+</head>
+<body>
+
+
+<div id="viewerButtonArea">
+	<input id="file-input" type="file" style="display: none"/>
+	<button onclick="loadImage()">Load Image</button>
+	<button onclick="rotate(1)">Rotate Right</button>
+	<button onclick="doOCR()">OCR</button>
+</div>
+<div id="container">
+	<div id="left">
+		<textarea  id="log" rows="20" style="overflow: hidden;width: 280px"></textarea>
+
+	</div>
+	<div id="right">
+		<div id="imageArea" style="width: 1600px; height: 900px; border: 1px solid #666;">
+			<canvas id="drawCanvas"></canvas>
+			<div>
+				<img id="imageScan1" src="#">
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="../Semantic-UI-CSS-master/semantic.css">
+<script
+		src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous"></script>
+ <script src="../Semantic-UI-CSS-master/semantic.js"></script>
+<script src="../js/viewer.js"></script>
+</body>
+
+</html>

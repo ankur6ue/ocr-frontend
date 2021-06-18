@@ -1,0 +1,75 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../css/style.css"/>
+
+</head>
+<body>
+
+<div class="ui grid container">
+    <div class="row">
+        <div class="column">
+            <h1 id="title" class="ui center aligned blue header">OCR Demo</h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h1 class="ui header"></h1>
+        <div class="ui divider"></div>
+        <div class="ui two column grid">
+            <div class="four wide column">
+                <input id="file-input" type="file" style="display: none"/>
+                <div class="ui hidden divider"></div>
+                <div class="ui center aligned grid container">
+                    <button class="ui primary button" tabindex="0" onclick="loadImage()">
+                        Load Image
+                    </button>
+                    <button id="ocrButton" class="ui primary button" tabindex="0" onclick="doOCR()">
+                        OCR
+                    </button>
+                </div>
+                <div class="ui hidden divider"></div>
+                <div class="ui divider"></div>
+                <div class="ui form">
+
+                    <div class="field">
+                        <label>Log</label>
+                        <textarea id="log" rows="20"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ten wide column">
+
+                <div id="imageArea" class="row" style="width: 1500px; height: 800px; border: 1px solid #666;">
+                    <canvas id="drawCanvas"></canvas>
+                </div>
+
+                <div class="ui horizontal divider"></div>
+                <div class="ui two column grid">
+                    <div class="row" style="width: 1500px; height: 400px;">
+                        <div id="diagnosticsArea_cc" class="column" style="width: 700px; height: 400px">
+                            <canvas id="diagnosticsCanvas_cc"></canvas>
+                        </div>
+                        <div id="diagnosticsArea_rs" class="column" style="width: 700px; height: 400px">
+                            <canvas id="diagnosticsCanvas_rs"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="../Semantic-UI-CSS-master/semantic.css">
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script src="../Semantic-UI-CSS-master/semantic.js"></script>
+<script src="../js/viewer.js"></script>
+</body>
+
+</html>

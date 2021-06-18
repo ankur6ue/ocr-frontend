@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ocr-frontend-svc
+  namespace: dev
+spec:
+  selector:
+    app: ocr-frontend
+  ports:
+    - protocol: TCP
+      port: 8800
+      targetPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ocr-frontend-dep
+  namespace: dev
+  labels:
+    app: ocr-frontend-dep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ocr-frontend
+  template:
+    metadata:
+      labels:
+        app: ocr-frontend
+    spec:
+      containers:
+      - name: ocr-frontend
+        image: ocr-frontend
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
